@@ -45,6 +45,12 @@ RUNTIME_DEBUG_LOG_CONF_FILENAME = "/etc/ovirt-node/logging.debug.conf"
 def parse_cmdline():
     """Parses the relevant cmdline arguments
     """
+    import inspect
+    curframe = inspect.currentframe()
+    calframe = inspect.getouterframes(curframe, 2)
+    print 'caller name:', calframe[1][3]
+    import sys
+    sys.exit(0)
     parser = OptionParser()
     parser.add_option("--defaults",
                       dest="defaults",
@@ -131,7 +137,7 @@ class Application(base.Base):
                                    (mixed, type_to_instance))
             plugin = type_to_instance[mixed]
         else:
-            raise Exception("Can't look up: %s" % mixed)
+            raise Exception("Can't look up: %s" % type(mixed))
 
         self.logger.debug("Found plugin for type: %s" % plugin)
         return plugin

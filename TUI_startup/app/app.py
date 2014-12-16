@@ -131,7 +131,7 @@ class Application(base.Base):
                                    (mixed, type_to_instance))
             plugin = type_to_instance[mixed]
         else:
-            raise Exception("Can't look up: %s" % mixed)
+            raise Exception("Can't look up: %s" % type(mixed))
 
         self.logger.debug("Found plugin for type: %s" % plugin)
         return plugin

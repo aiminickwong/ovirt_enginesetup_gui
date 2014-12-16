@@ -18,8 +18,10 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA  02110-1301, USA.  A copy of the GNU General Public License is
 # also available at http://www.gnu.org/copyleft/gpl.html.
-from ovirt.node import base, exceptions, ui, log
-from ovirt.node.exceptions import InvalidData
+#from ovirt.node import base, exceptions, ui, log
+from TUI_startup.util import base,exceptions,log
+from TUI_startup.app import ui
+from TUI_startup.util.exceptions import InvalidData
 
 """
 This contains much stuff related to plugins

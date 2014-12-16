@@ -18,8 +18,9 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA  02110-1301, USA.  A copy of the GNU General Public License is
 # also available at http://www.gnu.org/copyleft/gpl.html.
-from ovirt.node import ui, base
-from ovirt.node.ui import widgets as uw
+from TUI_startup.app import ui 
+from TUI_startup.util import base
+from TUI_startup.app.ui import widgets as uw
 import os
 import urwid
 

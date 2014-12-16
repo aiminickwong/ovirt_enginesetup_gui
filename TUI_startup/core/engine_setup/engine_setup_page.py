@@ -25,11 +25,14 @@ import gettext
 _ = lambda m: gettext.dgettext(message=m, domain='ovirt-engine-setup')
 
 
-from ovirt.node import plugins, valid, ui
+#from ovirt.node import plugins, valid, ui
+from TUI_startup.app import ui
+from TUI_startup.app import plugins
 from TUI_startup.util import valid
 from TUI_startup import util as utils
 from TUI_startup.model import defaults
-from ovirt.node.plugins import Changeset
+from TUI_startup.app.plugins import Changeset
+
 import inspect
 import re
 

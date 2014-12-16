@@ -18,13 +18,16 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA  02110-1301, USA.  A copy of the GNU General Public License is
 # also available at http://www.gnu.org/copyleft/gpl.html.
-from ovirt.node import plugins, ui, config
+#from ovirt.node import plugins, ui, config
+from TUI_startup.app import plugins
+from TUI_startup import config
+from TUI_startup.app import ui
 from TUI_startup.util import valid
 from TUI_startup import util as utils
 from TUI_startup.config import network as cnetwork
 #from ovirt.node.config import defaults
 from TUI_startup.model import defaults
-from ovirt.node.plugins import Changeset
+from TUI_startup.app.plugins import Changeset
 from TUI_startup.util import network
 #from TUI_startup.util import ping
 """
