@@ -166,9 +166,12 @@ class Plugin(plugin.PluginBase, dialog.DialogBaseImpl):
         print "query note is %s" %note
         if not caseSensitive and validValues is not None:
             validValues = [v.lower() for v in validValues]
-        print self.context.TUI_configuration
-        if self.context.TUI_configuration.get(name):
-            return self.context.TUI_configuration.get(name)
+        try:
+            print self.context.TUI_configuration
+            if self.context.TUI_configuration.get(name):
+                return self.context.TUI_configuration.get(name)
+        except:
+            pass
         accepted = False
         while not accepted:
             self.dialog.note(text=note, prompt=prompt)
