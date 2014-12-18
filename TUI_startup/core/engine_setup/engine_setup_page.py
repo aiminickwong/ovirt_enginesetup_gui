@@ -103,7 +103,7 @@ class Plugin(plugins.NodePlugin):
 
 
     def name(self):
-        return "Logging"
+        return "engine-setup"
 
     def rank(self):
         return 50

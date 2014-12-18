@@ -45,12 +45,6 @@ RUNTIME_DEBUG_LOG_CONF_FILENAME = "/etc/ovirt-node/logging.debug.conf"
 def parse_cmdline():
     """Parses the relevant cmdline arguments
     """
-    import inspect
-    curframe = inspect.currentframe()
-    calframe = inspect.getouterframes(curframe, 2)
-    print 'caller name:', calframe[1][3]
-    import sys
-    sys.exit(0)
     parser = OptionParser()
     parser.add_option("--defaults",
                       dest="defaults",
@@ -293,8 +287,8 @@ class Application(base.Base):
                 self.logger.error("The TUI cannot be used in rescue mode. "
                                   "Please reboot without rescue to "
                                   "configure/install.")
-                import sys
-                sys.exit(0)
+                #import sys
+                #sys.exit(0)
             self.ui.run()
         except Exception as e:
             if self.args.debug:
